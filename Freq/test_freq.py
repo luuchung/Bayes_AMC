@@ -15,6 +15,7 @@ print('.....Start loading data.....')
 class MyDataset(Dataset):
     def __init__(self, X, y):
         self.dat = torch.utils.data.TensorDataset(X,y)
+        
     def __getitem__(self, index):
         data, target = self.dat[index]
         return data, target, index
