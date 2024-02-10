@@ -49,8 +49,8 @@ num_test = 1
 def out_average(model, data_snr, num_test):
     test_Y_hat = 0
     for i in range(num_test):
-        #test_Y_hat +=  model(data_snr[:, :, :].to(device))[:, -1, :]
-        test_Y_hat += model(data_snr[:, :, :].to(device))
+        test_Y_hat +=  model(data_snr[:, :, :].to(device))[:, -1, :]
+        #test_Y_hat += model(data_snr[:, :, :].to(device))
     return test_Y_hat/num_test
 
 for snr in snrs:
@@ -60,7 +60,7 @@ for snr in snrs:
             normalize += 1
             Z_snr = Z_array[index]
             X_test_snr = data[np.where(Z_snr == snr)]
-            test_Y_hat = out_average(net, X_test_snr, num_test = 1)
+            test_Y_hat = out_average(net, X_test_snr, num_test = 100)
             _, right, wrong = mltools.calculate_confusion_matrix(target[np.where(Z_snr == snr)].detach().cpu().numpy(), test_Y_hat.detach().cpu().numpy(), classes)
 
             acc_batch[snr] += round(1.0 * right / (right + wrong), 3)
