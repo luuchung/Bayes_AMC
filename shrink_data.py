@@ -1,7 +1,7 @@
 import numpy as np
 import h5py
 def subsample_data_2018_tofile(from_filename="Data/23mods_61023.hdf5", sample_rate=1/2,to_filename="Data/23mods_1Mdata_61023.hdf5"):
-    f = h5py.File(from_filename, 'r')  # 打开h5文件
+    f = h5py.File(from_filename, 'r')
     X = f['X']  # ndarray(2555904*512*2)
     Y = f['Y']  # ndarray(2M*24)
     Z = f['Z']  # ndarray(2M*1)
