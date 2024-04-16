@@ -1,5 +1,5 @@
 # Bayes_AMC
-This repo contains implementation for the paper 'Uncertainty-Aware Incremental Automatic Modulation Classification with Bayesian Neural Network'.
+This repo contains implementation for the paper 'Uncertainty-Aware Incremental Automatic Modulation Classification with Bayesian Neural Network (https://ieeexplore.ieee.org/document/10502260)'.
 If you have any questions, please get in touch with e-mail: luu.chung.13597@gmail.com
 # Environment
 These models are implemented in Pytorch, and the environment setting is:
